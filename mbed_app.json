@@ -1,0 +1,39 @@
+{
+    "config": {
+        "camera":{
+            "help": "0:disable 1:enable",
+            "value": "1"
+        },
+        "camera-type":{
+            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+            "value": "CAMERA_RASPBERRY_PI"
+        },
+        "lcd":{
+            "help": "0:disable 1:enable",
+            "value": "1"
+        },
+        "lcd-type":{
+            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+            "value": null
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate": 115200,
+            "platform.stdio-convert-newlines": true,
+            "target.components": ["FLASHIAP"],
+            "target.macros_add": ["MBED_CONF_APP_MAIN_STACK_SIZE=8192",
+                                  "LCD_SIZE=SD_7INCH",
+                                  "MBEDTLS_USER_CONFIG_FILE=\"mbedtls_entropy_config.h\""]
+        },
+        "RZ_A2M_EVB": {
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
+        "RZ_A2M_SBEV": {
+            "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
+                                  "MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        }
+    }
+}
