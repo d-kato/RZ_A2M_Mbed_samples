@@ -20,9 +20,9 @@
                               //  1 : FlashAPI sample
                               //  2 : SSIF loop back sample
                               //  3 : SPDIF loop back sample
-                              //  4 : SSIF wav playback sample
-                              //  5 : SPDIF wav playback sample
-                              //  6 : LCD, Touch panel and JCU sample
+                              //  4 : SSIF wav playback sample (use USB memory or SD card)
+                              //  5 : SPDIF wav playback sample (use USB memory or SD card)
+                              //  6 : LCD, Touch panel and JCU sample (use USB memory or SD card)
                               //  7 : USBSerial (CDC) sample
                               //  8 : USBMouse sample
                               //  9 : USBKeyboard sample
@@ -40,7 +40,8 @@
 
 
 #if (SAMPLE_PROGRAM_NO == 0)  //-----------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  0 : DigitalOut, InterruptIn, RTC, Timer and AnalogIn sample
+//
 // LED1 will blink at 1 second intervals.
 // While pressing USER_BUTTON 0, LED2 lights up.
 // RTC value, Timer value and AD value are displayed every 1 second.
@@ -102,7 +103,8 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 1)  //---------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  1 : FlashAPI sample
+//
 // This is a sample program of flash writing.
 // Writes to the address set in FLASH_ADDR.
 // Erasing is in units of 4096 bytes.
@@ -167,7 +169,9 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 2) || (SAMPLE_PROGRAM_NO == 3)  //------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  2 : SSIF loop back sample
+// SAMPLE_PROGRAM_NO  3 : SPDIF loop back sample
+//
 // The input sound is output as it is.
 // In case of SAMPLE_PROGRAM_NO=2, please input the sound from the line-in, not from the microphone.
 // In case of SAMPLE_PROGRAM_NO=3 :
@@ -261,7 +265,9 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 4) || (SAMPLE_PROGRAM_NO == 5)  //------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  4 : SSIF wav playback sample (use USB memory or SD card)
+// SAMPLE_PROGRAM_NO  5 : SPDIF wav playback sample (use USB memory or SD card)
+//
 // This sample will play a ".wav" file of the SD root folder.
 // Wav file format : RIFF format, 1ch or 2ch, 44.1kHz, 16bits
 // In case of SAMPLE_PROGRAM_NO=5 :
@@ -338,7 +344,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 6)  //---------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  6 : LCD, Touch panel and JCU sample (use USB memory or SD card)
+//
 // Decodes the JPEG file in the USB memory and displays it on the LED.
 // Touch information displays on the JPEG image.
 // Up to 2 touch positions can be recognized at the same time.
@@ -595,7 +602,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 7)  //---------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  7 : USBSerial (CDC) sample
+// 
 // USBSerial example
 // Virtual serial port over USB
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
@@ -621,7 +629,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 8)  //---------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  8 : USBMouse sample
+//
 // The USBMouse interface is used to emulate a mouse over the USB port. 
 // You can choose relative or absolute co-ordinates, and send clicks, button state and scroll wheel movements.
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
@@ -650,7 +659,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 9)  //---------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO  9 : USBKeyboard sample
+//
 // The USBKeyboard interface is used to emulate a keyboard over the USB port.
 // You can type strings and send keycodes.
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
@@ -671,7 +681,8 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 10)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 10 : USBMIDI sample
+//
 // The USBMIDI interface can be used to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 // Using this library, you can do things like send MIDI messages to a computer (such as to record in a sequencer,
 // or trigger a software synthesiser) and receive messages from a computer (such as actuate things based on MIDI events)
@@ -697,7 +708,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 11)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 11 : USBAudio sample
+//
 // Audio loopback example use:
 // 1. Select "Mbed Audio" as your sound device
 // 2. Play a song or audio file
@@ -724,7 +736,7 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 12)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 12 : USBAudio and SSIF sample
 // Sound from PC will be output to SSIF. (speaker)
 // Sound from SSIF will be input to the PC. (microphone)
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
@@ -807,6 +819,7 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 13)  //--------------------------------------------------------------------------------------------
+// SAMPLE_PROGRAM_NO 13 : Ether HTTP sample
 
 #include "mbed.h"
 #include "http_request.h"
@@ -883,6 +896,7 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 14)  //--------------------------------------------------------------------------------------------
+// SAMPLE_PROGRAM_NO 14 : Ether HTTPS sample
 
 #include "mbed.h"
 #include "https_request.h"
@@ -1032,7 +1046,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 15)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 15 : CEU, LCD and PWM sample
+//
 // Display camera image on LCD
 // Pressing SW3 changes the LCD backlight. (PWM)
 //
@@ -1142,7 +1157,8 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 16)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 16 : USBMSD and FlashAPI sample
+//
 // USBMSD and FlashAPI sample.
 // It is a sample program that can read and write serial flash from the PC via Filesystem.
 // By connecting the board and the PC with a USB cable, you can refer inside the device as a mass storage device.
@@ -1168,7 +1184,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 17)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 17 : USBMSD and FlashAPI sample advanced version
+//
 // USBMSD and FlashAPI sample advanced version
 // It is a sample program that can read and write serial flash from the PC via Filesystem.
 // By connecting the board and the PC with a USB cable, you can refer inside the device as a mass storage device.
@@ -1448,7 +1465,8 @@ int main() {
 
 
 #elif (SAMPLE_PROGRAM_NO == 18)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 18 : MIPI and LCD sample
+//
 // Display MIPI camera image on LCD
 //
 // Please set the value of "camera-type" in "mbed_app.json" to "CAMERA_RASPBERRY_PI".
@@ -1529,7 +1547,8 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 19)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 19 : DRP Basic Operation Sample,
+//
 // Converts the input image from MIPI camera to YUV image using DRP and outputs to display.
 // Please refer to the document for details. (RZ_A2M_Mbed\drp-for-mbed\r_drp\doc),
 //
@@ -1673,7 +1692,8 @@ int main(void) {
 
 
 #elif (SAMPLE_PROGRAM_NO == 20)  //--------------------------------------------------------------------------------------------
-
+// SAMPLE_PROGRAM_NO 20 : DRP Dynamic Loading Sample
+//
 // Detects the edges of the input image from MIPI camera by Canny method using DRP and outputs to display.
 // Please refer to the document for details. (RZ_A2M_Mbed\drp-for-mbed\r_drp\doc)
 //
