@@ -93,6 +93,9 @@ You can change the baud rate by ``platform.stio-baud-rate`` of ``mbed_app.json``
 | Stop        | 1bit    |
 | Flow control| none    |
 
+**Attention!**  
+``SBEV-RZ/A2M`` and ``SEMB1402`` use the RZ/A2M's USB as the terminal. To use USB for other purposes, delete ``OVERRIDE_CONSOLE_USBSERIAL`` macro in ``mbed_app.json`` file.
+
 
 ## How to download by use e2studio
 Download [e2studio 7.0.0 or lator](https://www.renesas.com/eu/en/products/software-tools/tools/ide/e2studio.html), and install.  
