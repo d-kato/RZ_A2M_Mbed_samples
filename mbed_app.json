@@ -6,7 +6,7 @@
         },
         "camera-type":{
             "help": "Please see EasyAttach_CameraAndLCD/README.md",
-            "value": "CAMERA_RASPBERRY_PI"
+            "value": null
         },
         "lcd":{
             "help": "0:disable 1:enable",
@@ -31,6 +31,12 @@
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "RZ_A2M_SBEV": {
+            "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
+                                  "MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
+        "SEMB1402": {
+            "app.lcd"          : "0",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]

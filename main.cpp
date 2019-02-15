@@ -51,10 +51,10 @@
 DigitalOut led1(LED1);
 DigitalOut led2(LED2);
 InterruptIn button(USER_BUTTON0);
-#if defined(TARGET_RZ_A2M_EVB) || defined(TARGET_RZ_A2M_SBEV)
+#if defined(TARGET_RZ_A2M_EVB)
 AnalogIn adin(P5_6); // In TARGET_RZ_A2M_EVB, SW5 and SW4 are connected to P5_6 as AD switches.
 #else
-AnalogIn adin(A0);   // For other Mbed boards (GR-PEACH, GR-LYCHEE)
+AnalogIn adin(A0);   // For other Mbed boards
 #endif
 
 static void button_fall(void) {
@@ -110,8 +110,9 @@ int main(void) {
 // Erasing is in units of 4096 bytes.
 
 #include "mbed.h"
+#include "mbed_drv_cfg.h"
 
-#define FLASH_ADDR  0x20700000
+#define FLASH_ADDR  (FLASH_BASE + FLASH_SIZE - 0x100000)
 
 static uint8_t flash_work_buff[256];
 
@@ -181,8 +182,11 @@ int main(void) {
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
+#if defined(TARGET_SEMB1402)
+#error "Audio is not supported."
+#endif
 #if ((SAMPLE_PROGRAM_NO == 3) && !defined(TARGET_RZ_A2M_EVB))
-  #error "SPDIF is not supported."
+#error "SPDIF is not supported."
 #endif
 
 #include "mbed.h"
@@ -277,8 +281,11 @@ int main() {
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
+#if defined(TARGET_SEMB1402)
+#error "Audio is not supported."
+#endif
 #if ((SAMPLE_PROGRAM_NO == 5) && !defined(TARGET_RZ_A2M_EVB))
-  #error "SPDIF is not supported."
+#error "SPDIF is not supported."
 #endif
 
 #include "mbed.h"
@@ -349,6 +356,10 @@ int main() {
 // Decodes the JPEG file in the USB memory and displays it on the LED.
 // Touch information displays on the JPEG image.
 // Up to 2 touch positions can be recognized at the same time.
+
+#if defined(TARGET_SEMB1402)
+#error "LCD is not supported."
+#endif
 
 #include "mbed.h"
 #include "FATFileSystem.h"
@@ -741,6 +752,10 @@ int main() {
 // Sound from SSIF will be input to the PC. (microphone)
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
 
+#if defined(TARGET_SEMB1402)
+#error "Audio is not supported."
+#endif
+
 #include "mbed.h"
 #include "USBAudio.h"
 #include "AUDIO_GRBoard.h"
@@ -821,6 +836,10 @@ int main() {
 #elif (SAMPLE_PROGRAM_NO == 13)  //--------------------------------------------------------------------------------------------
 // SAMPLE_PROGRAM_NO 13 : Ether HTTP sample
 
+#if defined(TARGET_SEMB1402)
+#error "Ether is not supported."
+#endif
+
 #include "mbed.h"
 #include "http_request.h"
 #include "EthernetInterface.h"
@@ -897,6 +916,10 @@ int main() {
 
 #elif (SAMPLE_PROGRAM_NO == 14)  //--------------------------------------------------------------------------------------------
 // SAMPLE_PROGRAM_NO 14 : Ether HTTPS sample
+
+#if defined(TARGET_SEMB1402)
+#error "Ether is not supported."
+#endif
 
 #include "mbed.h"
 #include "https_request.h"
@@ -1065,6 +1088,9 @@ int main() {
 //            "value": "RZ_A2M_EVB_RSK_TFT"
 //        },
 
+#if defined(TARGET_SEMB1402)
+#error "LCD is not supported."
+#endif
 
 #include "mbed.h"
 #include "EasyAttach_CameraAndLCD.h"
@@ -1476,6 +1502,9 @@ int main() {
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
 
+#if defined(TARGET_SEMB1402)
+#error "LCD is not supported."
+#endif
 #if !defined(TARGET_RZ_A2XX)
 #error "MIPI is not supported."
 #endif
@@ -1559,6 +1588,9 @@ int main(void) {
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
 
+#if defined(TARGET_SEMB1402)
+#error "LCD is not supported."
+#endif
 #if !defined(TARGET_RZ_A2XX)
 #error "DRP and MIPI are not supported."
 #endif
@@ -1704,6 +1736,9 @@ int main(void) {
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
 
+#if defined(TARGET_SEMB1402)
+#error "LCD is not supported."
+#endif
 #if !defined(TARGET_RZ_A2XX)
 #error "DRP and MIPI are not supported."
 #endif

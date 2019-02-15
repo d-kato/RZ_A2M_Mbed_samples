@@ -8,29 +8,35 @@ You can try each sample program by changing the following macro. (main.cpp)
 #define SAMPLE_PROGRAM_NO  0
 ```
 
-| No.| Description                                                 |
-|:---|:------------------------------------------------------------|
-|  0 | DigitalOut, InterruptIn, RTC, Timer and AnalogI             |
-|  1 | FlashAPI sample                                             |
-|  2 | SSIF loop back sample                                       |
-|  3 | SPDIF loop back sample                                      |
-|  4 | SSIF wav playback sample (use USB memory or SD card)        |
-|  5 | SPDIF wav playback sample (use USB memory or SD card)       |
-|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card) |
-|  7 | USBSerial (CDC) sample                                      |
-|  8 | USBMouse sample                                             |
-|  9 | USBKeyboard sample                                          |
-| 10 | USBMIDI sample                                              |
-| 11 | USBAudio sample                                             |
-| 12 | USBAudio and SSIF sample                                    |
-| 13 | Ether HTTP sample                                           |
-| 14 | Ether HTTPS sample                                          |
-| 15 | CEU, LCD and PWM sample                                     |
-| 16 | USBMSD and FlashAPI sample                                  |
-| 17 | USBMSD and FlashAPI sample advanced version                 |
-| 18 | MIPI and LCD sample                                         |
-| 19 | DRP Basic Operation Sample                                  |
-| 20 | DRP Dynamic Loading Sample                                  |
+| No.| Description                                                 | A | B | C | D | E |
+|:---|:------------------------------------------------------------|:--|:--|:--|:--|:--|
+|  0 | DigitalOut, InterruptIn, RTC, Timer and AnalogI             | x | x | x | x | x |
+|  1 | FlashAPI sample                                             | x | x | x | x | x |
+|  2 | SSIF loop back sample                                       | x | x | x | x |   |
+|  3 | SPDIF loop back sample                                      |   |   | x |   |   |
+|  4 | SSIF wav playback sample (use USB memory or SD card)        | x | x | x | x |   |
+|  5 | SPDIF wav playback sample (use USB memory or SD card)       |   |   | x |   |   |
+|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card) | x | x | x | x |   |
+|  7 | USBSerial (CDC) sample                                      | x | x | x | x | x |
+|  8 | USBMouse sample                                             | x | x | x | x | x |
+|  9 | USBKeyboard sample                                          | x | x | x | x | x |
+| 10 | USBMIDI sample                                              | x | x | x | x | x |
+| 11 | USBAudio sample                                             | x | x | x | x | x |
+| 12 | USBAudio and SSIF sample                                    | x | x | x | x |   |
+| 13 | Ether HTTP sample                                           | x |   | x | x |   |
+| 14 | Ether HTTPS sample                                          | x |   | x | x |   |
+| 15 | CEU, LCD and PWM sample                                     |   |   | x | x |   |
+| 16 | USBMSD and FlashAPI sample                                  | x | x | x | x | x |
+| 17 | USBMSD and FlashAPI sample advanced version                 | x | x | x | x | x |
+| 18 | MIPI and LCD sample                                         |   |   | x | x |   |
+| 19 | DRP Basic Operation Sample                                  |   |   | x | x |   |
+| 20 | DRP Dynamic Loading Sample                                  |   |   | x | x |   |
+
+A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
+B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
+C : [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-demo/rz-a2m-evaluation-board-kit.html) (RZ/A2M)  
+D : [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486) (RZ/A2M)  
+E : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)  
 
 
 ## Development environment
@@ -70,6 +76,10 @@ SW6-10 OFF
 Build command option :  
 `$ mbed compile -m RZ_A2M_SBEV -t GCC_ARM --profile debug`
 
+- [SEMB1402](http://www.shimafuji.co.jp/products/1505)  
+Build command option :  
+`$ mbed compile -m SEMB1402 -t GCC_ARM --profile debug`
+
 
 ## Terminal setting
 If you want to confirm the serial communication the terminal soft on your PC, please specify the below values.  
@@ -94,4 +104,5 @@ Debugger : J-Link Base
 ![](docs/img/j-link_connection_4.png)  
 ![](docs/img/j-link_connection_5.png)  
 ![](docs/img/j-link_connection_6.png)  
+![](docs/img/j-link_connection_7.png)  
 ![](docs/img/debug.png)  
