@@ -106,3 +106,47 @@ Debugger : J-Link Base
 ![](docs/img/j-link_connection_6.png)  
 ![](docs/img/j-link_connection_7.png)  
 ![](docs/img/debug.png)  
+
+
+## Custom boot loader
+By using the custom boot loader, you can drag & drop the .bin file to write the program.  
+
+### How to use a custom boot loader
+When using for the first time, please write a custom boot loader. Unzip ``bootloader_d_n_d/elf.zip`` and write the corresponding boot loader. (Refer to ``How to download by use e2studio``.)  
+
+
+Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as below.  
+```
+{
+    "config": {
+        === omit ===
+    },
+    "target_overrides": {
+        "*": {
+            === omit ===
+        },
+        "RZ_A2M_EVB": {
+            "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_EVB_boot.bin",
+            "target.app_offset"     : "0x20000",
+            === omit ===
+        },
+        "RZ_A2M_SBEV": {
+            "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_SBEV_boot.bin",
+            "target.app_offset"     : "0x20000",
+            === omit ===
+        },
+        "SEMB1402": {
+            "target.bootloader_img" : "bootloader_d_n_d/SEMB1402_boot.bin",
+            "target.app_offset"     : "0x20000",
+            === omit ===
+        }
+    }
+}
+```
+
+Build the program. Two files ``RZ_A2M_Mbed_samples.bin`` and ``RZ_A2M_Mbed_samples_application.bin`` are created.  
+
+Hold down ``SW3`` and press the reset button. (Or turn on the power.)  
+Connect the USB cable to the PC, you can find the ``MBED`` directory.  
+Drag & drop ``RZ_A2M_Mbed_samples_application.bin`` to the ``MBED`` directory.  
+When writing is completed, press the reset button.  
