@@ -28,8 +28,8 @@ You can try each sample program by changing the following macro. (main.cpp)
 | 15 | CEU, LCD and PWM sample                                     |   |   | x | x |   |
 | 16 | USBMSD and FlashAPI sample                                  | x | x | x | x | x |
 | 17 | USBMSD and FlashAPI sample advanced version                 | x | x | x | x | x |
-| 18 | MIPI and LCD sample                                         |   |   | x | x |   |
-| 19 | DRP Basic Operation Sample                                  |   |   | x | x |   |
+| 18 | MIPI, DRP and LCD sample                                    |   |   | x | x |   |
+| 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")     |   |   | x | x | x |
 | 20 | DRP Dynamic Loading Sample                                  |   |   | x | x |   |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
