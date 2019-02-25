@@ -1,5 +1,5 @@
 # RZ_A2M_Mbed_samples
-This is a sample programs that works on RZ/A2M board.  
+This is a collection of sample programs that work on RZ/A2M boards.  
 
 
 ## Overview
@@ -122,26 +122,51 @@ Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as 
 ```
 {
     "config": {
-        === omit ===
+        "camera":{
+            "help": "0:disable 1:enable",
+            "value": "1"
+        },
+        "camera-type":{
+            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+            "value": null
+        },
+        "lcd":{
+            "help": "0:disable 1:enable",
+            "value": "1"
+        },
+        "lcd-type":{
+            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+            "value": null
+        }
     },
     "target_overrides": {
         "*": {
-            === omit ===
+            "platform.stdio-baud-rate": 115200,
+            "platform.stdio-convert-newlines": true,
+            "target.components": ["FLASHIAP"],
+            "target.macros_add": ["MBED_CONF_APP_MAIN_STACK_SIZE=8192",
+                                  "LCD_SIZE=SD_7INCH",
+                                  "MBEDTLS_USER_CONFIG_FILE=\"mbedtls_entropy_config.h\""]
         },
         "RZ_A2M_EVB": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_EVB_boot.bin",
             "target.app_offset"     : "0x20000",
-            === omit ===
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "RZ_A2M_SBEV": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_SBEV_boot.bin",
             "target.app_offset"     : "0x20000",
-            === omit ===
+            "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
+                                  "MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "SEMB1402": {
             "target.bootloader_img" : "bootloader_d_n_d/SEMB1402_boot.bin",
             "target.app_offset"     : "0x20000",
-            === omit ===
+            "app.lcd"          : "0",
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         }
     }
 }
