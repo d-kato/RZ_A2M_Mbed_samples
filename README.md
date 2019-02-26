@@ -12,11 +12,11 @@ You can try each sample program by changing the following macro. (main.cpp)
 |:---|:------------------------------------------------------------|:--|:--|:--|:--|:--|
 |  0 | DigitalOut, InterruptIn, RTC, Timer and AnalogI             | x | x | x | x | x |
 |  1 | FlashAPI sample                                             | x | x | x | x | x |
-|  2 | SSIF loop back sample                                       | x | x | x | x |   |
+|  2 | SSIF loop back sample                                       | x | x | x |   |   |
 |  3 | SPDIF loop back sample                                      |   |   | x |   |   |
-|  4 | SSIF wav playback sample (use USB memory or SD card)        | x | x | x | x |   |
+|  4 | SSIF wav playback sample (use USB memory or SD card)        | x | x | x |   |   |
 |  5 | SPDIF wav playback sample (use USB memory or SD card)       |   |   | x |   |   |
-|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card) | x | x | x | x |   |
+|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card) | x | x | x |   |   |
 |  7 | USBSerial (CDC) sample                                      | x | x | x | x | x |
 |  8 | USBMouse sample                                             | x | x | x | x | x |
 |  9 | USBKeyboard sample                                          | x | x | x | x | x |
@@ -25,12 +25,12 @@ You can try each sample program by changing the following macro. (main.cpp)
 | 12 | USBAudio and SSIF sample                                    | x | x | x | x |   |
 | 13 | Ether HTTP sample                                           | x |   | x | x |   |
 | 14 | Ether HTTPS sample                                          | x |   | x | x |   |
-| 15 | CEU, LCD and PWM sample                                     |   |   | x | x |   |
+| 15 | CEU, LCD and PWM sample                                     |   |   | x |   |   |
 | 16 | USBMSD and FlashAPI sample                                  | x | x | x | x | x |
 | 17 | USBMSD and FlashAPI sample advanced version                 | x | x | x | x | x |
-| 18 | MIPI, DRP and LCD sample                                    |   |   | x | x |   |
+| 18 | MIPI, DRP and LCD sample                                    |   |   | x |   |   |
 | 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")     |   |   | x | x | x |
-| 20 | DRP Dynamic Loading Sample                                  |   |   | x | x |   |
+| 20 | DRP Dynamic Loading Sample                                  |   |   | x |   |   |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
@@ -157,6 +157,7 @@ Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as 
         "RZ_A2M_SBEV": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_SBEV_boot.bin",
             "target.app_offset"     : "0x20000",
+            "app.lcd"          : "0",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]

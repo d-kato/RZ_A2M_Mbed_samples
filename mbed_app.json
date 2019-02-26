@@ -31,6 +31,7 @@
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "RZ_A2M_SBEV": {
+            "app.lcd"          : "0",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]

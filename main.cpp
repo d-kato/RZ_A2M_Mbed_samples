@@ -182,7 +182,7 @@ int main(void) {
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "Audio is not supported."
 #endif
 #if ((SAMPLE_PROGRAM_NO == 3) && !defined(TARGET_RZ_A2M_EVB))
@@ -281,7 +281,7 @@ int main() {
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "Audio is not supported."
 #endif
 #if ((SAMPLE_PROGRAM_NO == 5) && !defined(TARGET_RZ_A2M_EVB))
@@ -357,7 +357,7 @@ int main() {
 // Touch information displays on the JPEG image.
 // Up to 2 touch positions can be recognized at the same time.
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "LCD is not supported."
 #endif
 
@@ -1088,7 +1088,7 @@ int main() {
 //            "value": "RZ_A2M_EVB_RSK_TFT"
 //        },
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "LCD is not supported."
 #endif
 
@@ -1503,7 +1503,7 @@ int main() {
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "LCD is not supported."
 #endif
 #if !defined(TARGET_RZ_A2XX)
@@ -1944,7 +1944,7 @@ int main(void) {
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "LCD is not supported."
 #endif
 #if !defined(TARGET_RZ_A2XX)
