@@ -752,7 +752,7 @@ int main() {
 // Sound from SSIF will be input to the PC. (microphone)
 // [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
 
-#if defined(TARGET_SEMB1402)
+#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "Audio is not supported."
 #endif
 

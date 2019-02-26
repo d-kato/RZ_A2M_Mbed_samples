@@ -22,7 +22,7 @@ You can try each sample program by changing the following macro. (main.cpp)
 |  9 | USBKeyboard sample                                          | x | x | x | x | x |
 | 10 | USBMIDI sample                                              | x | x | x | x | x |
 | 11 | USBAudio sample                                             | x | x | x | x | x |
-| 12 | USBAudio and SSIF sample                                    | x | x | x | x |   |
+| 12 | USBAudio and SSIF sample                                    | x | x | x |   |   |
 | 13 | Ether HTTP sample                                           | x |   | x | x |   |
 | 14 | Ether HTTPS sample                                          | x |   | x | x |   |
 | 15 | CEU, LCD and PWM sample                                     |   |   | x |   |   |
