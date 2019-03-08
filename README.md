@@ -166,7 +166,8 @@ Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as 
             "target.bootloader_img" : "bootloader_d_n_d/SEMB1402_boot.bin",
             "target.app_offset"     : "0x20000",
             "app.lcd"          : "0",
-            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+            "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
+                                  "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         }
     }
