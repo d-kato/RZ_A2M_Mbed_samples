@@ -215,12 +215,7 @@ typedef struct {
 Mail<mail_t, MAIL_QUEUE_SIZE> mail_box;
 
 //32 bytes aligned! No cache memory
-#if defined(__ICCARM__)
-#pragma data_alignment=32
-static uint8_t audio_read_buff[READ_BUFF_NUM][AUDIO_BUFF_SIZE] @ ".mirrorram";
-#else
 static uint8_t audio_read_buff[READ_BUFF_NUM][AUDIO_BUFF_SIZE] __attribute((section("NC_BSS"),aligned(32)));
-#endif
 
 static void callback_audio(void * p_data, int32_t result, void * p_app_data) {
     mail_t *mail = mail_box.alloc();
@@ -766,15 +761,8 @@ int main() {
 AUDIO_GRBoard i2s_audio(0x80, AUDIO_OUT_BUFF_NUM - 1, AUDIO_IN_BUFF_NUM);
 
 //32 bytes aligned! No cache memory
-#if defined(__ICCARM__)
-#pragma data_alignment=32
-static uint8_t audio_out_buff[AUDIO_OUT_BUFF_NUM][AUDIO_BUFF_SIZE] @ ".mirrorram";
-#pragma data_alignment=32
-static uint8_t audio_in_buff[AUDIO_IN_BUFF_NUM][AUDIO_BUFF_SIZE] @ ".mirrorram";
-#else
 static uint8_t audio_out_buff[AUDIO_OUT_BUFF_NUM][AUDIO_BUFF_SIZE] __attribute((section("NC_BSS"),aligned(32)));
 static uint8_t audio_in_buff[AUDIO_IN_BUFF_NUM][AUDIO_BUFF_SIZE] __attribute((section("NC_BSS"),aligned(32)));
-#endif
 
 Semaphore   mic_in_sem(0);
 
@@ -1106,12 +1094,7 @@ int main() {
 
 DisplayBase Display;
 
-#if defined(__ICCARM__)
-#pragma data_alignment=32
-static uint8_t user_frame_buffer0[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT] @ ".mirrorram";
-#else
 static uint8_t user_frame_buffer0[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((section("NC_BSS"),aligned(32)));
-#endif
 
 static void Start_Video_Camera(void) {
     // Video capture setting (progressive form fixed)
@@ -1544,11 +1527,7 @@ static uint8_t fbuf_bayer[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute(
 static uint8_t fbuf_yuv[FRAME_BUFFER_STRIDE_2 * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
 static uint8_t fbuf_overlay[OVL_STRIDE * OVL_HEIGHT]__attribute((section("NC_BSS"),aligned(32)));
 
-#if defined(__ICCARM__)
-static r_drp_simple_isp_t param_isp @ ".mirrorram";
-#else
 static r_drp_simple_isp_t param_isp __attribute((section("NC_BSS")));
-#endif
 static uint8_t drp_lib_id[R_DK2_TILE_NUM] = {0};
 static Thread drpTask(osPriorityHigh);
 static uint32_t isp_wb_mode_req;
@@ -1778,11 +1757,7 @@ static uint8_t fbuf_yuv[FRAME_BUFFER_STRIDE_2 * FRAME_BUFFER_HEIGHT]__attribute(
 static uint8_t JpegBuffer[1024 * 64]__attribute((aligned(32)));
 static DisplayApp  display_app;
 
-#if defined(__ICCARM__)
-static r_drp_simple_isp_t param_isp @ ".mirrorram";
-#else
 static r_drp_simple_isp_t param_isp __attribute((section("NC_BSS")));
-#endif
 static uint8_t drp_lib_id[R_DK2_TILE_NUM] = {0};
 static Thread drpTask(osPriorityHigh);
 static uint32_t isp_wb_mode_req;
@@ -1981,16 +1956,9 @@ static uint8_t fbuf_bayer[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute(
 static uint8_t fbuf_work0[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
 static uint8_t fbuf_work1[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
 static uint8_t fbuf_clat8[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
-#if defined(__ICCARM__)
-#pragma data_alignment=32
-static uint8_t fbuf_overlay[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT] @ ".mirrorram";
-static uint8_t drp_work_buf[(FRAME_BUFFER_STRIDE * (FRAME_BUFFER_HEIGHT + 2)) * 2] @ ".mirrorram";
-static uint8_t nc_memory[512] @ ".mirrorram";
-#else
 static uint8_t fbuf_overlay[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((section("NC_BSS"),aligned(32)));
 static uint8_t drp_work_buf[(FRAME_BUFFER_STRIDE * (FRAME_BUFFER_HEIGHT + 2)) * 2]__attribute((section("NC_BSS")));
 static uint8_t nc_memory[512] __attribute((section("NC_BSS")));
-#endif
 static uint8_t drp_lib_id[R_DK2_TILE_NUM] = {0};
 static Thread drpTask(osPriorityHigh);
 
