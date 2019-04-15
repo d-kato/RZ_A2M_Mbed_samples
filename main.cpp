@@ -1485,10 +1485,12 @@ int main() {
 //            "help": "Please see EasyAttach_CameraAndLCD/README.md",
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
+//
+// Requirements
+//   RZ/A2M Evaluation Board Kit : Display Output Board
+//   SBEV-RZ/A2M                 : LVDS To HDMI Board
+//   SEMB1402                    : LVDS To HDMI Board
 
-#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
-#error "LCD is not supported."
-#endif
 #if !defined(TARGET_RZ_A2XX)
 #error "DRP and MIPI are not supported."
 #endif
@@ -1918,10 +1920,12 @@ int main(void) {
 //            "help": "Please see EasyAttach_CameraAndLCD/README.md",
 //            "value": "CAMERA_RASPBERRY_PI"
 //        },
+//
+// Requirements
+//   RZ/A2M Evaluation Board Kit : Display Output Board
+//   SBEV-RZ/A2M                 : LVDS To HDMI Board
+//   SEMB1402                    : LVDS To HDMI Board
 
-#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
-#error "LCD is not supported."
-#endif
 #if !defined(TARGET_RZ_A2XX)
 #error "DRP and MIPI are not supported."
 #endif

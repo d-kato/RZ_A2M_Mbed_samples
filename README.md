@@ -28,9 +28,9 @@ You can try each sample program by changing the following macro. (main.cpp)
 | 15 | CEU, LCD and PWM sample                                     |   |   | x |   |   |
 | 16 | USBMSD and FlashAPI sample                                  | x | x | x | x | x |
 | 17 | USBMSD and FlashAPI sample advanced version                 | x | x | x | x | x |
-| 18 | MIPI, DRP and LCD sample                                    |   |   | x |   |   |
+| 18 | MIPI, DRP and LCD sample                                    |   |   | x | x | x |
 | 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")     |   |   | x | x | x |
-| 20 | DRP Dynamic Loading Sample                                  |   |   | x |   |   |
+| 20 | DRP Dynamic Loading Sample                                  |   |   | x | x | x |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
@@ -157,7 +157,6 @@ Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as 
         "RZ_A2M_SBEV": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_SBEV_boot.bin",
             "target.app_offset"     : "0x20000",
-            "app.lcd"          : "0",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
@@ -165,7 +164,6 @@ Add ``target.bootloader_img`` and ``target.app_offset`` to ``mbed_app.json`` as 
         "SEMB1402": {
             "target.bootloader_img" : "bootloader_d_n_d/SEMB1402_boot.bin",
             "target.app_offset"     : "0x20000",
-            "app.lcd"          : "0",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
