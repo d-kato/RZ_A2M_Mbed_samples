@@ -92,7 +92,8 @@ Set the following to ``<TARGET>``.
 - SBEV-RZ/A2M : ``RZ_A2M_SBEV``  
 - SEMB1402 : ``SEMB1402``  
 
-See "[About custom boot loaders](#About custom boot loaders)" for program writing.  
+See [About custom boot loaders](#About custom boot loaders) for program writing.  
+See [How to debug using e2studio](#How to debug using e2studio) for debugging.  
 
 
 ### When using Mbed Studio (GUI)
@@ -110,7 +111,8 @@ How to import and build this sample
 **Attention!**  
 You can not debug using Mbed Studio. Use only for build purposes. Debug the elf file created by Mbed Studio using e2studio.  
 
-See "[About custom boot loaders](#About custom boot loaders)" for program writing.  
+See [About custom boot loaders](#About custom boot loaders) for program writing.  
+See [How to debug using e2studio](#How to debug using e2studio) for debugging.  
 
 
 ## Terminal setting
