@@ -1475,6 +1475,7 @@ int main() {
 
 #elif (SAMPLE_PROGRAM_NO == 18)  //--------------------------------------------------------------------------------------------
 // SAMPLE_PROGRAM_NO 18 : MIPI, DRP and LCD sample
+// If you want to know more about SimpleIsp, please refer to: https://github.com/d-kato/RZ_A2M_WebCamera_MIPI
 //
 // Converts the input image from MIPI camera to YUV image using DRP and outputs to display.
 // Please refer to the document for details. (RZ_A2M_Mbed\drp-for-mbed\r_drp\doc),
@@ -1706,6 +1707,7 @@ int main(void) {
 
 #elif (SAMPLE_PROGRAM_NO == 19)  //--------------------------------------------------------------------------------------------
 // SAMPLE_PROGRAM_NO 19 : MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")
+// If you want to know more about SimpleIsp, please refer to: https://github.com/d-kato/RZ_A2M_WebCamera_MIPI
 //
 // Converts the input image from MIPI camera to YUV image using DRP and outputs to PC display using DisplayApp.
 // DisplayApp (Image display on PC display with USB connection)
