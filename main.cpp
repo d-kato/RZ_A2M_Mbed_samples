@@ -1174,6 +1174,7 @@ int main(void) {
 // (The format is required when connecting for the first time.)
 // Part of the flash address is used as storage.
 // The first 1MB is used as the program area, and the rest is used as the storage.
+// [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
 
 #include "mbed.h"
 #include "USBMSD.h"
@@ -1201,6 +1202,7 @@ int main() {
 // (The format is required when connecting for the first time.)
 // When you write a JPEG file (.jpg) from the PC to the storage, the image is displayed.
 // By pressing SW3, change the save destination to heap memory.
+// [Attention!] Delete the "OVERRIDE_CONSOLE_USBSERIAL" macro in "mbed_app.json" file if it is set.
 
 #include "mbed.h"
 #include "USBMSD.h"

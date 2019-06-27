@@ -12,35 +12,38 @@ You can try each sample program by changing the following macro. (main.cpp)
 #define SAMPLE_PROGRAM_NO  0
 ```
 
-| No.| Description                                                 | A | B | C | D | E |
-|:---|:------------------------------------------------------------|:--|:--|:--|:--|:--|
-|  0 | DigitalOut, InterruptIn, RTC, Timer and AnalogI             | x | x | x | x | x |
-|  1 | FlashAPI sample                                             | x | x | x | x | x |
-|  2 | SSIF loop back sample                                       | x | x | x |   |   |
-|  3 | SPDIF loop back sample                                      |   |   | x |   |   |
-|  4 | SSIF wav playback sample (use USB memory or SD card)        | x | x | x |   |   |
-|  5 | SPDIF wav playback sample (use USB memory or SD card)       |   |   | x |   |   |
-|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card) | x | x | x |   |   |
-|  7 | USBSerial (CDC) sample                                      | x | x | x | x | x |
-|  8 | USBMouse sample                                             | x | x | x | x | x |
-|  9 | USBKeyboard sample                                          | x | x | x | x | x |
-| 10 | USBMIDI sample                                              | x | x | x | x | x |
-| 11 | USBAudio sample                                             | x | x | x | x | x |
-| 12 | USBAudio and SSIF sample                                    | x | x | x |   |   |
-| 13 | Ether HTTP sample                                           | x |   | x | x |   |
-| 14 | Ether HTTPS sample                                          | x |   | x | x |   |
-| 15 | CEU, LCD and PWM sample                                     |   |   | x |   |   |
-| 16 | USBMSD and FlashAPI sample                                  | x | x | x | x | x |
-| 17 | USBMSD and FlashAPI sample advanced version                 | x | x | x | x | x |
-| 18 | MIPI, DRP and LCD sample                                    |   |   | x | x | x |
-| 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")     |   |   | x | x | x |
-| 20 | DRP Dynamic Loading Sample                                  |   |   | x | x | x |
+| No.| Description                                                  | A | B | C | D | E |
+|:---|:-------------------------------------------------------------|:--|:--|:--|:--|:--|
+|  0 | DigitalOut, InterruptIn, RTC, Timer and AnalogI              | x | x | x | x | x |
+|  1 | FlashAPI sample                                              | x | x | x | x | x |
+|  2 | SSIF loop back sample                                        | x | x | x |   |   |
+|  3 | SPDIF loop back sample                                       |   |   | x |   |   |
+|  4 | SSIF wav playback sample (use USB memory or SD card)         | x | x | x |   |   |
+|  5 | SPDIF wav playback sample (use USB memory or SD card)        |   |   | x |   |   |
+|  6 | LCD, Touch panel and JCU sample (use USB memory or SD card)  | x | x | x |   |   |
+|  7 | USBSerial (CDC) sample [\*1]                                 | x | x | x | x | x |
+|  8 | USBMouse sample [\*1]                                        | x | x | x | x | x |
+|  9 | USBKeyboard sample [\*1]                                     | x | x | x | x | x |
+| 10 | USBMIDI sample [\*1]                                         | x | x | x | x | x |
+| 11 | USBAudio sample [\*1]                                        | x | x | x | x | x |
+| 12 | USBAudio and SSIF sample [\*1]                               | x | x | x |   |   |
+| 13 | Ether HTTP sample                                            | x |   | x | x |   |
+| 14 | Ether HTTPS sample                                           | x |   | x | x |   |
+| 15 | CEU, LCD and PWM sample                                      |   |   | x |   |   |
+| 16 | USBMSD and FlashAPI sample [\*1]                             | x | x | x | x | x |
+| 17 | USBMSD and FlashAPI sample advanced version [\*1]            | x | x | x | x | x |
+| 18 | MIPI, DRP and LCD sample                                     |   |   | x | x | x |
+| 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp") [\*1]|   |   | x | x | x |
+| 20 | DRP Dynamic Loading Sample                                   |   |   | x | x | x |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
 C : [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html) (RZ/A2M)  
 D : [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486) (RZ/A2M)  
 E : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)  
+
+\*1: Delete the ``OVERRIDE_CONSOLE_USBSERIAL`` in the ``mbed_app.json`` to use USB function.  
+
 
 ## Board setting
 - RZ/A2M Evaluation Board Kit  
