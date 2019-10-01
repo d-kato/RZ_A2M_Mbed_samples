@@ -47,6 +47,17 @@ E : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)
 
 ## Board setting
 - RZ/A2M Evaluation Board Kit  
+Please set the dip switch SW1 of the CPU board as follows.
+```
+SW1-1  ON  
+SW1-2  OFF  
+SW1-3  ON   <- Set to OFF when using HyperFlash boot.
+SW1-4  OFF  
+SW1-5  OFF  
+SW1-6  ON  
+SW1-7  ON  
+SW1-8  ON  
+```
 Please set the dip switch SW6 of the SUB board as follows.
 ```
 SW6-1  OFF  
@@ -70,6 +81,7 @@ This sample uses a custom boot loader, and you can drag & drop the "xxxx_applica
 4. When writing is completed, press the reset button.  
 
 **Attention!**  
+This sample program uses custom boot loaders ``revision 2`` .  
 For the first time only, you need to write a custom bootloader as following.  
 [How to write a custom boot loader](https://github.com/d-kato/bootloader_d_n_d)  
 
@@ -91,7 +103,9 @@ $ mbed compile -m <TARGET> -t GCC_ARM --profile debug
 ```
 
 Set the following to ``<TARGET>``.  
-- RZ/A2M Evaluation Board Kit : ``RZ_A2M_EVB``  
+- RZ/A2M Evaluation Board Kit :  
+  Serial flash boot (CPU board SW1-3  ON) : ``RZ_A2M_EVB``   
+  HyperFlash boot  (CPU board SW1-3  OFF) : ``RZ_A2M_EVB_HF``  
 - SBEV-RZ/A2M : ``RZ_A2M_SBEV``  
 - SEMB1402 : ``SEMB1402``  
 
@@ -108,6 +122,7 @@ How to import and build this sample
 ![](docs/img/how_to_use_mbed_stusio_1.png)  
 ![](docs/img/how_to_use_mbed_stusio_2.png)  
 ![](docs/img/how_to_use_mbed_stusio_3.png)  
+**Attention!** : When using the RZ/A2M Evaluation Board Kit with HyperFlash boot, select "Target" box to ``RZ_A2M_EVB_HF``.  
 ![](docs/img/how_to_use_mbed_stusio_4.png)  
 
 

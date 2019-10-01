@@ -28,20 +28,26 @@
         },
         "RZ_A2M_EVB": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_EVB_boot.bin",
-            "target.app_offset"     : "0x20000",
+            "target.app_offset"     : "0x40000",
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
+        "RZ_A2M_EVB_HF": {
+            "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_EVB_HF_boot.bin",
+            "target.app_offset"     : "0x40000",
             "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "RZ_A2M_SBEV": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_SBEV_boot.bin",
-            "target.app_offset"     : "0x20000",
+            "target.app_offset"     : "0x40000",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
         },
         "SEMB1402": {
             "target.bootloader_img" : "bootloader_d_n_d/SEMB1402_boot.bin",
-            "target.app_offset"     : "0x20000",
+            "target.app_offset"     : "0x40000",
             "target.macros_add": ["OVERRIDE_CONSOLE_USBSERIAL",
                                   "MBEDTLS_TEST_NULL_ENTROPY",
                                   "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
