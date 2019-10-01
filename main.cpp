@@ -3,6 +3,16 @@
 // The UART baud rate when printf() is output to the terminal is 115,200.
 // You can change the baud rate by "platform.stio-baud-rate" of "mbed_app.json".
 
+// To use TARGET_RZ_A2M_EVB, set the dip switch SW1 of the CPU board as follows.
+//   SW1-1  ON
+//   SW1-2  OFF
+//   SW1-3  ON   <- Set to OFF when using HyperFlash boot.
+//   SW1-4  OFF
+//   SW1-5  OFF
+//   SW1-6  ON
+//   SW1-7  ON
+//   SW1-8  ON
+//
 // To use TARGET_RZ_A2M_EVB, set the dip switch SW6 of the SUB board as follows.
 //   SW6-1  OFF
 //   SW6-2  OFF
@@ -37,6 +47,7 @@
                               // 18 : MIPI, DRP and LCD sample
                               // 19 : MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")
                               // 20 : DRP Dynamic Loading Sample
+                              // 21 : Deep standby and RTC alarm sample
 
 
 #if (SAMPLE_PROGRAM_NO == 0)  //-----------------------------------------------------------------------------------------------
@@ -2255,5 +2266,60 @@ int main(void) {
     wait(osWaitForever);
 }
 
+#elif (SAMPLE_PROGRAM_NO == 21)  //--------------------------------------------------------------------------------------------
+// SAMPLE_PROGRAM_NO 21 : Deep standby and RTC alarm sample
+//
+// Wake up from deep standby every 5 seconds using RTC alarm interrupt.
+// It also wakes up when BUTTON1(SW2) is pressed.
+
+#include "mbed.h"
+#include "AlarmTimer.h"
+#include "DeepStandby.h"
+
+// On-Chip Data Retention RAM
+static int wake_up_cnt __attribute((section("NV_DATA")));
+
+int main() {
+    printf("SAMPLE_PROGRAM_NO %d start\r\n", SAMPLE_PROGRAM_NO);
+
+    time_t seconds;
+    DeepStandby::cancel_src_simple_t cancel_src;
+
+    if (DeepStandby::GetCancelSourceSimple(&cancel_src) == false) {
+        // Reset start
+        printf("Reset start\r\n");
+        // initialization of On-Chip Data Retention RAM
+        wake_up_cnt = 0;
+    } else {
+        // Deep standby cancel
+        wake_up_cnt++;
+        printf("Deep standby cancel %d :", wake_up_cnt);
+        if (cancel_src.button0) {  // Works with RZ_A2M_EVB and SEMB1402.
+            printf(" BUTTON0");
+        }
+        if (cancel_src.button1) {  // Works with RZ_A2M_EVB and RZ_A2M_SBEV.
+            printf(" BUTTON1");
+        }
+        if (cancel_src.rtc) {      // Works with RZ_A1H, RZ_A2M_EVB, RZ_A2M_SBEV and SEMB1402.
+            printf(" RTC");
+        }
+        printf("\r\n");
+    }
+
+    // RTC time
+    seconds = time(NULL);
+    struct tm *t = localtime(&seconds);
+    printf("RTC time : %02d/%02d/%04d %02d:%02d:%02d\r\n\r\n",
+           t->tm_mon + 1, t->tm_mday, t->tm_year + 1900, t->tm_hour, t->tm_min, t->tm_sec);
+
+    // Set alarm interrupt
+    AlarmTimer::set(seconds + 5);  // 5 seconds later
+
+    // Set deep standby mode
+    cancel_src.button0 = false;    // Works with RZ_A2M_EVB and SEMB1402. (Used with custom boot loader)
+    cancel_src.button1 = true;     // Works with RZ_A2M_EVB and RZ_A2M_SBEV.
+    cancel_src.rtc     = true;     // Works with RZ_A1H, RZ_A2M_EVB, RZ_A2M_SBEV and SEMB1402.
+    DeepStandby::SetDeepStandbySimple(&cancel_src);
+}
 
 #endif
