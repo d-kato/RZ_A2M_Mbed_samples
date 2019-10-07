@@ -35,7 +35,7 @@ You can try each sample program by changing the following macro. (main.cpp)
 | 18 | MIPI, DRP and LCD sample                                     |   |   | x | x | x |
 | 19 | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp") [\*1]|   |   | x | x | x |
 | 20 | DRP Dynamic Loading Sample                                   |   |   | x | x | x |
-| 21 | Deep standby and RTC alarm sample                            | x |   | x | x | x |
+| 21 | Deep standby and RTC alarm sample                            |   |   | x | x | x |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
