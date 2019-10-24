@@ -82,7 +82,7 @@ This sample uses a custom boot loader, and you can drag & drop the "xxxx_applica
 4. When writing is completed, press the reset button.  
 
 **Attention!**  
-This sample program uses custom boot loaders ``revision 2`` .  
+This sample program uses custom boot loaders ``revision 3`` .  
 For the first time only, you need to write a custom bootloader as following.  
 [How to write a custom boot loader](https://github.com/d-kato/bootloader_d_n_d)  
 
