@@ -77,7 +77,7 @@ SW6-10 OFF
 ```
 
 ## About custom boot loaders
-**Attention!  GR-MANGO alpha version is not supported.**  
+**<font color="Red">Attention! GR-MANGO alpha version is not supported.</font>**  
 This sample uses a custom boot loader, and you can drag & drop the "xxxx_application.bin" file to write the program.  
 
 1. Hold down ``SW3`` and press the reset button. (Or turn on the power.)  
@@ -93,10 +93,10 @@ For the first time only, you need to write a custom bootloader as following.
 
 ## Development environment
 You can use ``Mbed CLI (CUI)`` or ``Mbed Studio (GUI)``. Choose your preferred development environment.  
+**<font color="Red">Attention! GR-MANGO supports only GCC_ARM of Mbed CLI.</font>**  
 
 ### When using Mbed CLI (CUI)
-**Attention!  GR-MANGO supports only GCC_ARM of Mbed CLI.**  
-You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler.  
+You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler. **<font color="Red">Attention! GR-MANGO supports only GCC_ARM.</font>**  
 Information of Mbed CLI that includes install&quick start guide is as the following.  
 [Installation](https://github.com/ARMmbed/mbed-cli/blob/1.8.3/README.md#installation)  
 
@@ -109,6 +109,7 @@ $ mbed compile -m <TARGET> -t GCC_ARM --profile debug
 ```
 
 Set the following to ``<TARGET>``.  
+- GR-MANGO alpha version : ``GR_MANGO``  
 - RZ/A2M Evaluation Board Kit :  
   Serial flash boot (CPU board SW1-3  ON) : ``RZ_A2M_EVB``   
   HyperFlash boot  (CPU board SW1-3  OFF) : ``RZ_A2M_EVB_HF``  
@@ -120,7 +121,7 @@ See [How to debug using e2studio](#how-to-debug-using-e2studio) for debugging.
 
 
 ### When using Mbed Studio (GUI)
-**Attention!  GR-MANGO alpha version is not supported.**  
+**<font color="Red">Attention! GR-MANGO alpha version is not supported.</font>**  
 You can use ``Arm Compiler 6`` included with Mbed Studio for free.  
 Information of Mbed Studio that includes install&quick start guide is as the following.  
 [Installation](https://os.mbed.com/studio/)  
