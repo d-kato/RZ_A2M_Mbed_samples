@@ -1,6 +1,7 @@
 # RZ_A2M_Mbed_samples
 This is a collection of sample programs that work on RZ/A2M boards.  
 You can try Mbed OS for RZ/A2M with the following board.
+- GR-MANGO alpha version  
 - [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html)  
 - [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486)  
 - [SEMB1402](http://www.shimafuji.co.jp/products/1505)  
@@ -13,36 +14,37 @@ You can try each sample program by changing the following macro in``sample_selec
 #define SAMPLE_PROGRAM_NO  0
 ```
 
-| No.| Program file                                                                          | Description                                                  | A | B | C | D | E |
-|:---|:--------------------------------------------------------------------------------------|:-------------------------------------------------------------|:--|:--|:--|:--|:--|
-|  0 | [sample_00_led_rtc_analogin.cpp](sample_programs/sample_00_led_rtc_analogin.cpp)      | DigitalOut, InterruptIn, RTC, Timer and AnalogI              | x | x | x | x | x |
-|  1 | [sample_01_flash_write.cpp](sample_programs/sample_01_flash_write.cpp)                | FlashAPI sample                                              | x | x | x | x | x |
-|  2 | [sample_02_ssif_loop_back.cpp](sample_programs/sample_02_ssif_loop_back.cpp)          | SSIF loop back sample                                        | x | x | x |   |   |
-|  3 | [sample_03_spdif_loop_back.cpp](sample_programs/sample_03_spdif_loop_back.cpp)        | SPDIF loop back sample                                       |   |   | x |   |   |
-|  4 | [sample_04_ssif_wav_playback.cpp](sample_programs/sample_04_ssif_wav_playback.cpp)    | SSIF wav playback sample (use USB memory or SD card)         | x | x | x |   |   |
-|  5 | [sample_05_spdif_wav_playback.cpp](sample_programs/sample_05_spdif_wav_playback.cpp)  | SPDIF wav playback sample (use USB memory or SD card)        |   |   | x |   |   |
-|  6 | [sample_06_lcd_touch_jcu.cpp](sample_programs/sample_06_lcd_touch_jcu.cpp)            | LCD, Touch panel and JCU sample (use USB memory or SD card)  | x | x | x |   |   |
-|  7 | [sample_07_usb_func_serial.cpp](sample_programs/sample_07_usb_func_serial.cpp)        | USBSerial (CDC) sample [\*1]                                 | x | x | x | x | x |
-|  8 | [sample_08_usb_func_mouse.cpp](sample_programs/sample_08_usb_func_mouse.cpp)          | USBMouse sample [\*1]                                        | x | x | x | x | x |
-|  9 | [sample_09_usb_func_keyboard.cpp](sample_programs/sample_09_usb_func_keyboard.cpp)    | USBKeyboard sample [\*1]                                     | x | x | x | x | x |
-| 10 | [sample_10_usb_func_midi.cpp](sample_programs/sample_10_usb_func_midi.cpp)            | USBMIDI sample [\*1]                                         | x | x | x | x | x |
-| 11 | [sample_11_usb_func_audio_1.cpp](sample_programs/sample_11_usb_func_audio_1.cpp)      | USBAudio sample [\*1]                                        | x | x | x | x | x |
-| 12 | [sample_12_usb_func_audio_2.cpp](sample_programs/sample_12_usb_func_audio_2.cpp)      | USBAudio and SSIF sample [\*1]                               | x | x | x |   |   |
-| 13 | [sample_13_ether_http.cpp](sample_programs/sample_13_ether_http.cpp)                  | Ether HTTP sample                                            | x |   | x | x |   |
-| 14 | [sample_14_ether_https.cpp](sample_programs/sample_14_ether_https.cpp)                | Ether HTTPS sample                                           | x |   | x | x |   |
-| 15 | [sample_15_ceu_lcd_pwm.cpp](sample_programs/sample_15_ceu_lcd_pwm.cpp)                | CEU, LCD and PWM sample                                      |   |   | x |   |   |
-| 16 | [sample_16_usb_func_msd_1.cpp](sample_programs/sample_16_usb_func_msd_1.cpp)          | USBMSD and FlashAPI sample [\*1]                             | x | x | x | x | x |
-| 17 | [sample_17_usb_func_msd_2.cpp](sample_programs/sample_17_usb_func_msd_2.cpp)          | USBMSD and FlashAPI sample advanced version [\*1]            | x | x | x | x | x |
-| 18 | [sample_18_mipi_drp_lcd.cpp](sample_programs/sample_18_mipi_drp_lcd.cpp)              | MIPI, DRP and LCD sample                                     |   |   | x | x | x |
-| 19 | [sample_19_mipi_drp_diplayapp.cpp](sample_programs/sample_19_mipi_drp_diplayapp.cpp)  | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp") [\*1]|   |   | x | x | x |
-| 20 | [sample_20_drp_dynamic_loading.cpp](sample_programs/sample_20_drp_dynamic_loading.cpp)| DRP Dynamic Loading Sample                                   |   |   | x | x | x |
-| 21 | [sample_21_deep_standby_alarm.cpp](sample_programs/sample_21_deep_standby_alarm.cpp)  | Deep standby and RTC alarm sample                            |   |   | x | x | x |
+| No.| Program file                                                                          | Description                                                  | A | B | C | D | E | F |
+|:---|:--------------------------------------------------------------------------------------|:-------------------------------------------------------------|:--|:--|:--|:--|:--|:--|
+|  0 | [sample_00_led_rtc_analogin.cpp](sample_programs/sample_00_led_rtc_analogin.cpp)      | DigitalOut, InterruptIn, RTC, Timer and AnalogI              | x | x | x | x | x | x |
+|  1 | [sample_01_flash_write.cpp](sample_programs/sample_01_flash_write.cpp)                | FlashAPI sample                                              | x | x |   | x | x | x |
+|  2 | [sample_02_ssif_loop_back.cpp](sample_programs/sample_02_ssif_loop_back.cpp)          | SSIF loop back sample                                        | x | x |   | x |   |   |
+|  3 | [sample_03_spdif_loop_back.cpp](sample_programs/sample_03_spdif_loop_back.cpp)        | SPDIF loop back sample                                       |   |   |   | x |   |   |
+|  4 | [sample_04_ssif_wav_playback.cpp](sample_programs/sample_04_ssif_wav_playback.cpp)    | SSIF wav playback sample (use USB memory or SD card)         | x | x |   | x |   |   |
+|  5 | [sample_05_spdif_wav_playback.cpp](sample_programs/sample_05_spdif_wav_playback.cpp)  | SPDIF wav playback sample (use USB memory or SD card)        |   |   |   | x |   |   |
+|  6 | [sample_06_lcd_touch_jcu.cpp](sample_programs/sample_06_lcd_touch_jcu.cpp)            | LCD, Touch panel and JCU sample (use USB memory or SD card)  | x | x |   | x |   |   |
+|  7 | [sample_07_usb_func_serial.cpp](sample_programs/sample_07_usb_func_serial.cpp)        | USBSerial (CDC) sample [\*1]                                 | x | x | x | x | x | x |
+|  8 | [sample_08_usb_func_mouse.cpp](sample_programs/sample_08_usb_func_mouse.cpp)          | USBMouse sample [\*1]                                        | x | x | x | x | x | x |
+|  9 | [sample_09_usb_func_keyboard.cpp](sample_programs/sample_09_usb_func_keyboard.cpp)    | USBKeyboard sample [\*1]                                     | x | x | x | x | x | x |
+| 10 | [sample_10_usb_func_midi.cpp](sample_programs/sample_10_usb_func_midi.cpp)            | USBMIDI sample [\*1]                                         | x | x | x | x | x | x |
+| 11 | [sample_11_usb_func_audio_1.cpp](sample_programs/sample_11_usb_func_audio_1.cpp)      | USBAudio sample [\*1]                                        | x | x | x | x | x | x |
+| 12 | [sample_12_usb_func_audio_2.cpp](sample_programs/sample_12_usb_func_audio_2.cpp)      | USBAudio and SSIF sample [\*1]                               | x | x |   | x |   |   |
+| 13 | [sample_13_ether_http.cpp](sample_programs/sample_13_ether_http.cpp)                  | Ether HTTP sample                                            | x |   | x | x | x |   |
+| 14 | [sample_14_ether_https.cpp](sample_programs/sample_14_ether_https.cpp)                | Ether HTTPS sample                                           | x |   | x | x | x |   |
+| 15 | [sample_15_ceu_lcd_pwm.cpp](sample_programs/sample_15_ceu_lcd_pwm.cpp)                | CEU, LCD and PWM sample                                      |   |   |   | x |   |   |
+| 16 | [sample_16_usb_func_msd_1.cpp](sample_programs/sample_16_usb_func_msd_1.cpp)          | USBMSD and FlashAPI sample [\*1]                             | x | x | x | x | x | x |
+| 17 | [sample_17_usb_func_msd_2.cpp](sample_programs/sample_17_usb_func_msd_2.cpp)          | USBMSD and FlashAPI sample advanced version [\*1]            | x | x | x | x | x | x |
+| 18 | [sample_18_mipi_drp_lcd.cpp](sample_programs/sample_18_mipi_drp_lcd.cpp)              | MIPI, DRP and LCD sample                                     |   |   | x | x | x | x |
+| 19 | [sample_19_mipi_drp_diplayapp.cpp](sample_programs/sample_19_mipi_drp_diplayapp.cpp)  | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp") [\*1]|   |   | x | x | x | x |
+| 20 | [sample_20_drp_dynamic_loading.cpp](sample_programs/sample_20_drp_dynamic_loading.cpp)| DRP Dynamic Loading Sample                                   |   |   | x | x | x | x |
+| 21 | [sample_21_deep_standby_alarm.cpp](sample_programs/sample_21_deep_standby_alarm.cpp)  | Deep standby and RTC alarm sample                            |   |   | x | x | x | x |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
-C : [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html) (RZ/A2M)  
-D : [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486) (RZ/A2M)  
-E : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)  
+C : GR-MANGO alpha version (RZ/A2M)  
+D : [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html) (RZ/A2M)  
+E : [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486) (RZ/A2M)  
+F : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)  
 
 \*1: Delete the ``OVERRIDE_CONSOLE_USBSERIAL`` in the ``mbed_app.json`` to use USB function.  
 
@@ -75,6 +77,7 @@ SW6-10 OFF
 ```
 
 ## About custom boot loaders
+**Attention!  GR-MANGO alpha version is not supported.**  
 This sample uses a custom boot loader, and you can drag & drop the "xxxx_application.bin" file to write the program.  
 
 1. Hold down ``SW3`` and press the reset button. (Or turn on the power.)  
@@ -92,6 +95,7 @@ For the first time only, you need to write a custom bootloader as following.
 You can use ``Mbed CLI (CUI)`` or ``Mbed Studio (GUI)``. Choose your preferred development environment.  
 
 ### When using Mbed CLI (CUI)
+**Attention!  GR-MANGO supports only GCC_ARM of Mbed CLI.**  
 You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler.  
 Information of Mbed CLI that includes install&quick start guide is as the following.  
 [Installation](https://github.com/ARMmbed/mbed-cli/blob/1.8.3/README.md#installation)  
@@ -116,6 +120,7 @@ See [How to debug using e2studio](#how-to-debug-using-e2studio) for debugging.
 
 
 ### When using Mbed Studio (GUI)
+**Attention!  GR-MANGO alpha version is not supported.**  
 You can use ``Arm Compiler 6`` included with Mbed Studio for free.  
 Information of Mbed Studio that includes install&quick start guide is as the following.  
 [Installation](https://os.mbed.com/studio/)  
