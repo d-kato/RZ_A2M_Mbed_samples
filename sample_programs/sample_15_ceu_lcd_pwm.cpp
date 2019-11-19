@@ -36,11 +36,11 @@
 //            "value": "CAMERA_XXXXXXXX"
 //        },
 //
-// Please set the value of "lcd-type" in "mbed_app.json" to "GR_PEACH_xxx", "GR_LYCHEE_xxx" or "RZ_A2M_EVB_RSK_TFT".
+// Please set the value of "lcd-type" in "mbed_app.json" to "TF043HV001A0", "ATM0430D25", "FG040346DSSWBG03" or "RSK_TFT".
 //
 //        "lcd-type":{
 //            "help": "Please see EasyAttach_CameraAndLCD/README.md",
-//            "value": "RZ_A2M_EVB_RSK_TFT"
+//            "value": "RSK_TFT"
 //        },
 
 #if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
