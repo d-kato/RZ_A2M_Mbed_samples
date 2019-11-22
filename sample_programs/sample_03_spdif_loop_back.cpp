@@ -34,9 +34,6 @@
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
-#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
-#error "Audio is not supported."
-#endif
 #if !defined(TARGET_RZ_A2M_EVB)
 #error "SPDIF is not supported."
 #endif
@@ -79,10 +76,6 @@ static void callback_audio(void * p_data, int32_t result, void * p_app_data) {
 int main() {
     rbsp_data_conf_t audio_write_conf = {&callback_audio, (void *)INFO_TYPE_WRITE_END};
     rbsp_data_conf_t audio_read_conf  = {&callback_audio, (void *)INFO_TYPE_READ_END};
-
-    audio.power();                // For GR-PEACH and GR-LYCHEE
-    audio.outputVolume(0.5, 0.5); // For GR-PEACH and GR-LYCHEE
-    audio.micVolume(0.7);         // For GR-PEACH and GR-LYCHEE
 
     // Read buffer setting
     for (int i = 0; i < READ_BUFF_NUM; i++) {

@@ -35,9 +35,6 @@
 //   - The AUDIO_CLK frequency required is 512 times as large as the sample frequency for audio data.
 //     (fs=44.1kHz : AUDIO_CLK=22.5792MHz, fs=48kHz : AUDIO_CLK=24.5760MHz)
 
-#if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
-#error "Audio is not supported."
-#endif
 #if !defined(TARGET_RZ_A2M_EVB)
 #error "SPDIF is not supported."
 #endif
@@ -68,8 +65,6 @@ int main() {
     // decoder setting
     AudioPlayer.add_decoder<EasyDec_WavCnv2ch>(".wav");
     AudioPlayer.add_decoder<EasyDec_WavCnv2ch>(".WAV");
-
-    AudioPlayer.outputVolume(0.5);  // For GR-PEACH and GR-LYCHEE
 
     // button setting
     skip_btn.fall(&skip_btn_fall);
