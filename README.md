@@ -20,7 +20,7 @@ You can try each sample program by changing the following macro in``sample_selec
 |  1 | [sample_01_flash_write.cpp](sample_programs/sample_01_flash_write.cpp)                | FlashAPI sample                                              | x | x |   | x | x | x |
 |  2 | [sample_02_ssif_loop_back.cpp](sample_programs/sample_02_ssif_loop_back.cpp)          | SSIF loop back sample                                        | x | x |   | x |   |   |
 |  3 | [sample_03_spdif_loop_back.cpp](sample_programs/sample_03_spdif_loop_back.cpp)        | SPDIF loop back sample                                       |   |   |   | x |   |   |
-|  4 | [sample_04_ssif_wav_playback.cpp](sample_programs/sample_04_ssif_wav_playback.cpp)    | SSIF wav playback sample (use USB memory or SD card)         | x | x |   | x |   |   |
+|  4 | [sample_04_ssif_wav_playback.cpp](sample_programs/sample_04_ssif_wav_playback.cpp)    | SSIF wav playback sample (use USB memory or SD card)         | x | x | x | x |   |   |
 |  5 | [sample_05_spdif_wav_playback.cpp](sample_programs/sample_05_spdif_wav_playback.cpp)  | SPDIF wav playback sample (use USB memory or SD card)        |   |   |   | x |   |   |
 |  6 | [sample_06_lcd_touch_jcu.cpp](sample_programs/sample_06_lcd_touch_jcu.cpp)            | LCD, Touch panel and JCU sample (use USB memory or SD card)  | x | x |   | x |   |   |
 |  7 | [sample_07_usb_func_serial.cpp](sample_programs/sample_07_usb_func_serial.cpp)        | USBSerial (CDC) sample [\*1]                                 | x | x | x | x | x | x |
