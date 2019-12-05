@@ -77,16 +77,15 @@ SW6-10 OFF
 ```
 
 ## About custom boot loaders
-**<font color="Red">Attention! GR-MANGO alpha version is not supported.</font>**  
 This sample uses a custom boot loader, and you can drag & drop the "xxxx_application.bin" file to write the program.  
 
-1. Hold down ``SW3`` and press the reset button. (Or turn on the power.)  
+1. Hold down ``SW3 (UB0)`` and press the reset button. (Or turn on the power.)  
 2. Connect the USB cable to the PC, you can find the ``MBED`` directory.  
 3. Drag & drop ``xxxx_application.bin`` to the ``MBED`` directory.  
 4. When writing is completed, press the reset button.  
 
 **Attention!**  
-This sample program uses custom boot loaders ``revision 3`` .  
+This sample program uses custom boot loaders ``revision 4`` .  
 For the first time only, you need to write a custom bootloader as following.  
 [How to write a custom boot loader](https://github.com/d-kato/bootloader_d_n_d)  
 

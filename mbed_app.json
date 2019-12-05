@@ -26,6 +26,12 @@
                                   "LCD_SIZE=SD_7INCH",
                                   "MBEDTLS_USER_CONFIG_FILE=\"mbedtls_entropy_config.h\""]
         },
+        "GR_MANGO": {
+            "target.bootloader_img" : "bootloader_d_n_d/GR_MANGO_boot.bin",
+            "target.app_offset"     : "0x40000",
+            "target.macros_add": ["MBEDTLS_TEST_NULL_ENTROPY",
+                                  "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"]
+        },
         "RZ_A2M_EVB": {
             "target.bootloader_img" : "bootloader_d_n_d/RZ_A2M_EVB_boot.bin",
             "target.app_offset"     : "0x40000",
