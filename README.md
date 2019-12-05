@@ -17,7 +17,7 @@ You can try each sample program by changing the following macro in``sample_selec
 | No.| Program file                                                                          | Description                                                  | A | B | C | D | E | F |
 |:---|:--------------------------------------------------------------------------------------|:-------------------------------------------------------------|:--|:--|:--|:--|:--|:--|
 |  0 | [sample_00_led_rtc_analogin.cpp](sample_programs/sample_00_led_rtc_analogin.cpp)      | DigitalOut, InterruptIn, RTC, Timer and AnalogI              | x | x | x | x | x | x |
-|  1 | [sample_01_flash_write.cpp](sample_programs/sample_01_flash_write.cpp)                | FlashAPI sample                                              | x | x |   | x | x | x |
+|  1 | [sample_01_flash_write.cpp](sample_programs/sample_01_flash_write.cpp)                | FlashAPI sample                                              | x | x | x | x | x | x |
 |  2 | [sample_02_ssif_loop_back.cpp](sample_programs/sample_02_ssif_loop_back.cpp)          | SSIF loop back sample                                        | x | x |   | x |   |   |
 |  3 | [sample_03_spdif_loop_back.cpp](sample_programs/sample_03_spdif_loop_back.cpp)        | SPDIF loop back sample                                       |   |   |   | x |   |   |
 |  4 | [sample_04_ssif_wav_playback.cpp](sample_programs/sample_04_ssif_wav_playback.cpp)    | SSIF wav playback sample (use USB memory or SD card)         | x | x | x | x |   |   |
