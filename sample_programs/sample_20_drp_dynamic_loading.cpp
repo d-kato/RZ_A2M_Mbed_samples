@@ -29,7 +29,14 @@
 // Detects the edges of the input image from MIPI camera by Canny method using DRP and outputs to display.
 // Please refer to the document for details. (RZ_A2M_Mbed\drp-for-mbed\r_drp\doc)
 //
-// Please set the value of "camera-type" in "mbed_app.json" to "CAMERA_RASPBERRY_PI".
+// Please set the value of "camera-type" in "mbed_app.json" to null or "CAMERA_RASPBERRY_PI".
+//
+//        "camera-type":{
+//            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+//            "value": null
+//        },
+//
+//        or
 //
 //        "camera-type":{
 //            "help": "Please see EasyAttach_CameraAndLCD/README.md",

@@ -30,7 +30,14 @@
 // Converts the input image from MIPI camera to YUV image using DRP and outputs to display.
 // Please refer to the document for details. (RZ_A2M_Mbed\drp-for-mbed\r_drp\doc),
 //
-// Please set the value of "camera-type" in "mbed_app.json" to "CAMERA_RASPBERRY_PI".
+// Please set the value of "camera-type" in "mbed_app.json" to null or "CAMERA_RASPBERRY_PI".
+//
+//        "camera-type":{
+//            "help": "Please see EasyAttach_CameraAndLCD/README.md",
+//            "value": null
+//        },
+//
+//        or
 //
 //        "camera-type":{
 //            "help": "Please see EasyAttach_CameraAndLCD/README.md",
@@ -57,8 +64,8 @@
 
 /*! Frame buffer stride: Frame buffer stride should be set to a multiple of 32 or 128
     in accordance with the frame buffer burst transfer mode. */
-#define VIDEO_PIXEL_HW         (640)
-#define VIDEO_PIXEL_VW         (480)
+#define VIDEO_PIXEL_HW         LCD_PIXEL_WIDTH
+#define VIDEO_PIXEL_VW         LCD_PIXEL_HEIGHT
 
 #define FRAME_BUFFER_STRIDE    (((VIDEO_PIXEL_HW * 1) + 31u) & ~31u)
 #define FRAME_BUFFER_STRIDE_2  (((VIDEO_PIXEL_HW * 2) + 31u) & ~31u)

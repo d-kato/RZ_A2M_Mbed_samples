@@ -60,7 +60,7 @@ int main() {
     AudioPlayer.add_decoder<EasyDec_WavCnv2ch>(".wav");
     AudioPlayer.add_decoder<EasyDec_WavCnv2ch>(".WAV");
 
-    AudioPlayer.outputVolume(0.5);  // For GR-PEACH and GR-LYCHEE
+    AudioPlayer.outputVolume(0.5);
 
     // button setting
     skip_btn.fall(&skip_btn_fall);

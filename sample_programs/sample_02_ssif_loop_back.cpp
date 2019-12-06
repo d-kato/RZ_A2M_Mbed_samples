@@ -27,7 +27,7 @@
 // SAMPLE_PROGRAM_NO  2 : SSIF loop back sample
 //
 // The input sound is output as it is.
-// In case of SAMPLE_PROGRAM_NO=2, please input the sound from the line-in, not from the microphone.
+// In case of GR-PEACH, please input the sound from the line-in, not from the microphone.
 
 #if defined(TARGET_SEMB1402) || defined(TARGET_RZ_A2M_SBEV)
 #error "Audio is not supported."
@@ -72,9 +72,9 @@ int main() {
     rbsp_data_conf_t audio_write_conf = {&callback_audio, (void *)INFO_TYPE_WRITE_END};
     rbsp_data_conf_t audio_read_conf  = {&callback_audio, (void *)INFO_TYPE_READ_END};
 
-    audio.power();                // For GR-PEACH and GR-LYCHEE
-    audio.outputVolume(0.5, 0.5); // For GR-PEACH and GR-LYCHEE
-    audio.micVolume(0.7);         // For GR-PEACH and GR-LYCHEE
+    audio.power();
+    audio.outputVolume(0.5, 0.5);
+    audio.micVolume(0.7);
 
     // Read buffer setting
     for (int i = 0; i < READ_BUFF_NUM; i++) {
