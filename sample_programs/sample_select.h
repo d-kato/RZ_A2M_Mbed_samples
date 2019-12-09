@@ -50,6 +50,5 @@
 // 18 : sample_18_mipi_drp_lcd         MIPI, DRP and LCD sample
 // 19 : sample_19_mipi_drp_diplayapp   MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp")
 // 20 : sample_20_drp_dynamic_loading  DRP Dynamic Loading Sample
-// 21 : sample_21_deep_standby_alarm   Deep standby and RTC alarm sample
 
 #endif // SAMPLE_SELECT_H
