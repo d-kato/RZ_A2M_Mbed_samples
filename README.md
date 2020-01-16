@@ -1,7 +1,7 @@
 # RZ_A2M_Mbed_samples
 This is a collection of sample programs that work on RZ/A2M boards.  
 You can try Mbed OS for RZ/A2M with the following board.
-- GR-MANGO alpha version  
+- GR-MANGO beta version  
 - [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html)  
 - [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486)  
 - [SEMB1402](http://www.shimafuji.co.jp/products/1505)  
@@ -40,7 +40,7 @@ You can try each sample program by changing the following macro in``sample_selec
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
-C : GR-MANGO alpha version (RZ/A2M)  
+C : GR-MANGO beta version (RZ/A2M)  
 D : [RZ/A2M Evaluation Board Kit](https://www.renesas.com/jp/en/products/software-tools/boards-and-kits/eval-kits/rz-a2m-evaluation-board-kit.html) (RZ/A2M)  
 E : [SBEV-RZ/A2M](http://www.shimafuji.co.jp/products/1486) (RZ/A2M)  
 F : [SEMB1402](http://www.shimafuji.co.jp/products/1505) (RZ/A2M)  
@@ -76,6 +76,7 @@ SW6-10 OFF
 ```
 
 ## About custom boot loaders
+**<font color="Red">Attention! When using GR-MANGO, please use DAPLink without using a custom boot loader.</font>**  
 This sample uses a custom boot loader, and you can drag & drop the "xxxx_application.bin" file to write the program.  
 
 1. Hold down ``SW3 (UB0)`` and press the reset button. (Or turn on the power.)  
@@ -107,7 +108,7 @@ $ mbed compile -m <TARGET> -t GCC_ARM --profile debug
 ```
 
 Set the following to ``<TARGET>``.  
-- GR-MANGO alpha version : ``GR_MANGO``  
+- GR-MANGO beta version : ``GR_MANGO``  
 - RZ/A2M Evaluation Board Kit :  
   Serial flash boot (CPU board SW1-3  ON) : ``RZ_A2M_EVB``   
   HyperFlash boot  (CPU board SW1-3  OFF) : ``RZ_A2M_EVB_HF``  
@@ -119,7 +120,7 @@ See [How to debug using e2studio](#how-to-debug-using-e2studio) for debugging.
 
 
 ### When using Mbed Studio (GUI)
-**<font color="Red">Attention! GR-MANGO alpha version is not supported.</font>**  
+**<font color="Red">Attention! GR-MANGO beta version is not supported.</font>**  
 You can use ``Arm Compiler 6`` included with Mbed Studio for free.  
 Information of Mbed Studio that includes install&quick start guide is as the following.  
 [Installation](https://os.mbed.com/studio/)  
