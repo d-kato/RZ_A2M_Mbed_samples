@@ -92,7 +92,7 @@ For the first time only, you need to write a custom bootloader as following.
 
 ## Development environment
 You can use ``Mbed CLI (CUI)`` or ``Mbed Studio (GUI)``. Choose your preferred development environment.  
-**<font color="Red">Attention! GR-MANGO supports only GCC_ARM of Mbed CLI.</font>**  
+
 
 ### When using Mbed CLI (CUI)
 You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler. **<font color="Red">Attention! GR-MANGO supports only GCC_ARM.</font>**  
@@ -120,7 +120,6 @@ See [How to debug using e2studio](#how-to-debug-using-e2studio) for debugging.
 
 
 ### When using Mbed Studio (GUI)
-**<font color="Red">Attention! GR-MANGO beta version is not supported.</font>**  
 You can use ``Arm Compiler 6`` included with Mbed Studio for free.  
 Information of Mbed Studio that includes install&quick start guide is as the following.  
 [Installation](https://os.mbed.com/studio/)  
