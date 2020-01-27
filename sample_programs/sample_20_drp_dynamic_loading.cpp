@@ -65,6 +65,8 @@
 #include "r_drp_canny_calculate.h"
 #include "r_drp_canny_hysterisis.h"
 
+#define RAM_TABLE_DYNAMIC_LOADING   1
+
 /*! Frame buffer stride: Frame buffer stride should be set to a multiple of 32 or 128
     in accordance with the frame buffer burst transfer mode. */
 #define VIDEO_PIXEL_HW         (640)
@@ -87,6 +89,13 @@ static uint8_t drp_work_buf[(FRAME_BUFFER_STRIDE * (FRAME_BUFFER_HEIGHT + 2)) * 
 static uint8_t nc_memory[512] __attribute((section("NC_BSS")));
 static uint8_t drp_lib_id[R_DK2_TILE_NUM] = {0};
 static Thread drpTask(osPriorityHigh);
+
+#if RAM_TABLE_DYNAMIC_LOADING
+static uint8_t ram_drp_lib_bayer2grayscale[sizeof(g_drp_lib_bayer2grayscale)]__attribute((aligned(32)));
+static uint8_t ram_drp_lib_median_blur[sizeof(g_drp_lib_median_blur)]__attribute((aligned(32)));
+static uint8_t ram_drp_lib_canny_calculate[sizeof(g_drp_lib_canny_calculate)]__attribute((aligned(32)));
+static uint8_t ram_drp_lib_canny_hysterisis[sizeof(g_drp_lib_canny_hysterisis)]__attribute((aligned(32)));
+#endif
 
 static const uint32_t clut_data_resut[] = {0x00000000, 0xff00ff00};  // ARGB8888
 
@@ -176,6 +185,14 @@ static void drp_task(void) {
     Display.Graphics_Irq_Handler_Set(DisplayBase::INT_TYPE_S0_VFIELD, 0, IntCallbackFunc_Vfield);
     Start_Video_Camera();
 
+#if RAM_TABLE_DYNAMIC_LOADING
+    // Copy to RAM to increase the speed of dynamic loading.
+    memcpy(ram_drp_lib_bayer2grayscale, g_drp_lib_bayer2grayscale, sizeof(ram_drp_lib_bayer2grayscale));
+    memcpy(ram_drp_lib_median_blur, g_drp_lib_median_blur, sizeof(ram_drp_lib_median_blur));
+    memcpy(ram_drp_lib_canny_calculate, g_drp_lib_canny_calculate, sizeof(ram_drp_lib_canny_calculate));
+    memcpy(ram_drp_lib_canny_hysterisis, g_drp_lib_canny_hysterisis, sizeof(ram_drp_lib_canny_hysterisis));
+#endif
+
     R_DK2_Initialize();
 
     t.start();
@@ -199,7 +216,12 @@ static void drp_task(void) {
         /*        +------------------+ */
         /* fbuf_bayer -> fbuf_work0    */
         t.reset();
-        R_DK2_Load(g_drp_lib_bayer2grayscale,
+        R_DK2_Load(
+#if RAM_TABLE_DYNAMIC_LOADING
+                   ram_drp_lib_bayer2grayscale,
+#else
+                   g_drp_lib_bayer2grayscale,
+#endif
                    R_DK2_TILE_0 | R_DK2_TILE_1 | R_DK2_TILE_2 | R_DK2_TILE_3 | R_DK2_TILE_4 | R_DK2_TILE_5,
                    R_DK2_TILE_PATTERN_1_1_1_1_1_1, NULL, &cb_drp_finish, drp_lib_id);
         R_DK2_Activate(0, 0);
@@ -237,7 +259,12 @@ static void drp_task(void) {
         /*        +------------------+ */
         /* fbuf_work0 -> fbuf_work1    */
         t.reset();
-        R_DK2_Load(g_drp_lib_median_blur,
+        R_DK2_Load(
+#if RAM_TABLE_DYNAMIC_LOADING
+                   ram_drp_lib_median_blur,
+#else
+                   g_drp_lib_median_blur,
+#endif
                    R_DK2_TILE_0 | R_DK2_TILE_1 | R_DK2_TILE_2 | R_DK2_TILE_3 | R_DK2_TILE_4 | R_DK2_TILE_5,
                    R_DK2_TILE_PATTERN_1_1_1_1_1_1, NULL, &cb_drp_finish, drp_lib_id);
         R_DK2_Activate(0, 0);
@@ -275,7 +302,12 @@ static void drp_task(void) {
         /*        +------------------+ */
         /* fbuf_work1 -> fbuf_work0    */
         t.reset();
-        R_DK2_Load(g_drp_lib_canny_calculate,
+        R_DK2_Load(
+#if RAM_TABLE_DYNAMIC_LOADING
+                   ram_drp_lib_canny_calculate,
+#else
+                   g_drp_lib_canny_calculate,
+#endif
                    R_DK2_TILE_0 | R_DK2_TILE_2 | R_DK2_TILE_4,
                    R_DK2_TILE_PATTERN_2_2_2, NULL, &cb_drp_finish, drp_lib_id);
         R_DK2_Activate(0, 0);
@@ -316,7 +348,12 @@ static void drp_task(void) {
         /*        +------------------+ */
         /* fbuf_work0 -> fbuf_clat8    */
         t.reset();
-        R_DK2_Load(g_drp_lib_canny_hysterisis,
+        R_DK2_Load(
+#if RAM_TABLE_DYNAMIC_LOADING
+                   ram_drp_lib_canny_hysterisis,
+#else
+                   g_drp_lib_canny_hysterisis,
+#endif
                    R_DK2_TILE_0,
                    R_DK2_TILE_PATTERN_6, NULL, &cb_drp_finish, drp_lib_id);
         R_DK2_Activate(0, 0);
