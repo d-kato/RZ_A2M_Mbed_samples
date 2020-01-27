@@ -128,7 +128,7 @@ How to import and build this sample
 ![](docs/img/how_to_use_mbed_stusio_1.png)  
 ![](docs/img/how_to_use_mbed_stusio_2.png)  
 ![](docs/img/how_to_use_mbed_stusio_3.png)  
-**Attention!** : When using the RZ/A2M Evaluation Board Kit with HyperFlash boot, select "Target" box to ``RZ_A2M_EVB_HF``.  
+**Attention!** : When using the GR-MANGO, select "Target" box to ``GR_MANGO``. When using the RZ/A2M Evaluation Board Kit with HyperFlash boot, select "Target" box to ``RZ_A2M_EVB_HF``.  
 ![](docs/img/how_to_use_mbed_stusio_4.png)  
 
 
