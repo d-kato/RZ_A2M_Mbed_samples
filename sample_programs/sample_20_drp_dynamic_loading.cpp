@@ -374,29 +374,24 @@ static void drp_task(void) {
 
 
         // Display DRP time
-        sprintf(str, "Bayer2Grayscale : Load%2lu.%lums + Ran%2lu.%lums",
-                drp_time[0] / 1000, (drp_time[0] - ((drp_time[0] / 1000) * 1000)) / 100,
-                drp_time[1] / 1000, (drp_time[1] - ((drp_time[1] / 1000) * 1000)) / 100);
+        sprintf(str, "Bayer2Grayscale : Load %2.1fms + Run %2.1fms",
+                (float_t)drp_time[0] / 1000, (float_t)drp_time[1] / 1000);
         ascii_font.DrawStr(str, 5, 5 + (AsciiFont::CHAR_PIX_HEIGHT + 1) * 0, 1, 2);
-        sprintf(str, "MedianBlur      : Load%2lu.%lums + Ran%2lu.%lums",
-                drp_time[2] / 1000, (drp_time[2] - ((drp_time[2] / 1000) * 1000)) / 100,
-                drp_time[3] / 1000, (drp_time[3] - ((drp_time[3] / 1000) * 1000)) / 100);
+        sprintf(str, "MedianBlur      : Load %2.1fms + Run %2.1fms",
+                (float_t)drp_time[2] / 1000, (float_t)drp_time[3] / 1000);
         ascii_font.DrawStr(str, 5, 5 + (AsciiFont::CHAR_PIX_HEIGHT + 1) * 2, 1, 2);
-        sprintf(str, "CannyCalculate  : Load%2lu.%lums + Ran%2lu.%lums",
-                drp_time[4] / 1000, (drp_time[4] - ((drp_time[4] / 1000) * 1000)) / 100,
-                drp_time[5] / 1000, (drp_time[5] - ((drp_time[5] / 1000) * 1000)) / 100);
+        sprintf(str, "CannyCalculate  : Load %2.1fms + Run %2.1fms",
+                (float_t)drp_time[4] / 1000, (float_t)drp_time[5] / 1000);
         ascii_font.DrawStr(str, 5, 5 + (AsciiFont::CHAR_PIX_HEIGHT + 1) * 4, 1, 2);
-        sprintf(str, "CannyHysterisis : Load%2lu.%lums + Ran%2lu.%lums",
-                drp_time[6] / 1000, (drp_time[6] - ((drp_time[6] / 1000) * 1000)) / 100,
-                drp_time[7] / 1000, (drp_time[7] - ((drp_time[7] / 1000) * 1000)) / 100);
+        sprintf(str, "CannyHysterisis : Load %2.1fms + Run %2.1fms",
+                (float_t)drp_time[6] / 1000, (float_t)drp_time[7] / 1000);
         ascii_font.DrawStr(str, 5, 5 + (AsciiFont::CHAR_PIX_HEIGHT + 1) * 6, 1, 2);
 
         uint32_t time_sum = 0;
         for (int i = 0; i < 8; i++) {
             time_sum += drp_time[i];
         }
-        sprintf(str, "Total           :%3lu.%lums",
-                time_sum / 1000, (time_sum - ((time_sum / 1000) * 1000)) / 100);
+        sprintf(str, "Total           : %2.1fms", (float_t)time_sum / 1000);
         ascii_font.DrawStr(str, 5, 5 + (AsciiFont::CHAR_PIX_HEIGHT + 1) * 8, 1, 2);
     }
 }
