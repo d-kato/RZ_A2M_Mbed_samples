@@ -85,7 +85,7 @@ static uint8_t fbuf_work0[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute(
 static uint8_t fbuf_work1[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
 static uint8_t fbuf_clat8[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((aligned(32)));
 static uint8_t fbuf_overlay[FRAME_BUFFER_STRIDE * FRAME_BUFFER_HEIGHT]__attribute((section("NC_BSS"),aligned(32)));
-static uint8_t drp_work_buf[(FRAME_BUFFER_STRIDE * (FRAME_BUFFER_HEIGHT + 2)) * 2]__attribute((section("NC_BSS")));
+static uint8_t drp_work_buf[((FRAME_BUFFER_STRIDE * ((FRAME_BUFFER_HEIGHT / 3) + 2)) * 2) * 3]__attribute((section("NC_BSS")));
 static uint8_t nc_memory[512] __attribute((section("NC_BSS")));
 static uint8_t drp_lib_id[R_DK2_TILE_NUM] = {0};
 static Thread drpTask(osPriorityHigh);
