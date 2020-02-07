@@ -76,17 +76,34 @@ SW6-10 OFF
 ```
 
 ## About custom boot loaders
-**<font color="Red">Attention! When using GR-MANGO, please use DAPLink without using a custom boot loader.</font>**  
-This sample uses a custom boot loader, and you can drag & drop the "xxxx_application.bin" file to write the program.  
-
-1. Hold down ``SW3 (UB0)`` and press the reset button. (Or turn on the power.)  
-2. Connect the USB cable to the PC, you can find the ``MBED`` directory.  
-3. Drag & drop ``xxxx_application.bin`` to the ``MBED`` directory.  
+This sample uses ``custom bootloader`` ``revision 5``, and you can drag & drop the "xxxx_application.bin" file to write the program. Please see [here](https://github.com/d-kato/bootloader_d_n_d) for the detail.  
+### How to write program
+#### For GR-MANGO
+When using ``DAPLink``, please use ``xxxx.bin`` as following.  
+1. Connect the ``micro USB type B terminal`` to the PC using a USB cable.
+2. You can find the ``MBED`` directory.
+3. Drag & drop ``xxxx.bin`` to the ``MBED`` directory.  
 4. When writing is completed, press the reset button.  
 
+When using ``custom bootloader``, please use ``xxxx_application.bin`` as following.  
+1. Connect the ``USB type C terminal`` to the PC using a USB cable.  
+2. Hold down ``USB0`` and press the reset button.  
+3. You can find the ``GR-MANG`` directory.  
+4. Drag & drop ``xxxx_application.bin`` to the ``GR-MANGO`` directory.  
+5. When writing is completed, press the reset button.  
+
 **Attention!**  
-This sample program uses custom boot loaders ``revision 4`` .  
-For the first time only, you need to write a custom bootloader as following.  
+For the first time only, you need to write a ``custom bootloader`` using ``DAPLink``.  
+
+#### For other boards
+1. Connect the USB cable to the PC.  
+2. Hold down ``SW3 (USB0)`` and press the reset button. (Or turn on the power.)  
+3. You can find the ``MBED`` directory.  
+4. Drag & drop ``xxxx_application.bin`` to the ``MBED`` directory.  
+5. When writing is completed, press the reset button.  
+
+**Attention!**  
+For the first time only, you need to write a ``custom bootloader`` as following.  
 [How to write a custom boot loader](https://github.com/d-kato/bootloader_d_n_d)  
 
 
@@ -95,7 +112,7 @@ You can use ``Mbed CLI (CUI)`` or ``Mbed Studio (GUI)``. Choose your preferred d
 
 
 ### When using Mbed CLI (CUI)
-You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler. **<font color="Red">Attention! GR-MANGO supports only GCC_ARM.</font>**  
+You can use ``GCC``, ``Arm Compiler 5``, ``Arm Compiler 6`` and ``IAR``. A license is required to use a compiler other than the ``GCC`` compiler.  
 Information of Mbed CLI that includes install&quick start guide is as the following.  
 [Installation](https://github.com/ARMmbed/mbed-cli/blob/1.8.3/README.md#installation)  
 
