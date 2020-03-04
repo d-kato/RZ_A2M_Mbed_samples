@@ -37,6 +37,7 @@ You can try each sample program by changing the following macro in``sample_selec
 | 18 | [sample_18_mipi_drp_lcd.cpp](sample_programs/sample_18_mipi_drp_lcd.cpp)              | MIPI, DRP and LCD sample                                     |   |   | x | x | x | x |
 | 19 | [sample_19_mipi_drp_diplayapp.cpp](sample_programs/sample_19_mipi_drp_diplayapp.cpp)  | MIPI, DRP and USBSerial (CDC) sample (use "DisplayApp") [\*1]|   |   | x | x | x | x |
 | 20 | [sample_20_drp_dynamic_loading.cpp](sample_programs/sample_20_drp_dynamic_loading.cpp)| DRP Dynamic Loading Sample                                   |   |   | x | x | x | x |
+| 21 | [sample_21_deep_standby_alarm.cpp](sample_programs/sample_21_deep_standby_alarm.cpp)  | Deep standby and RTC alarm sample                            |   |   | x | x | x | x |
 
 A : [GR-PEACH](https://os.mbed.com/platforms/Renesas-GR-PEACH/) (RZ/A1H)  
 B : [GR-LYCHEE](https://os.mbed.com/platforms/Renesas-GR-LYCHEE/) (RZ/A1LU)  
