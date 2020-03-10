@@ -34,7 +34,12 @@
 #include "DeepStandby.h"
 
 // On-Chip Data Retention RAM
-static int wake_up_cnt __attribute((section("NV_DATA")));
+#if defined ( __CC_ARM ) || (defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050))
+#define DATA_RETENTION_RAM ".bss.NoInit"
+#else
+#define DATA_RETENTION_RAM "NV_DATA"
+#endif
+static int wake_up_cnt __attribute((section(DATA_RETENTION_RAM)));
 
 int main() {
     time_t seconds;
